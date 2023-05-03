@@ -28,7 +28,7 @@ admin계정 로그인시 로그인 구현 전처럼 회원목록 및 수정 삭�
 
 # User Information 메뉴
 
-![image](https://user-images.githubusercontent.com/115135514/235618249-b65c0bb1-2b7c-4158-9e1c-05afc623511a.png)
+![image](https://user-images.githubusercontent.com/115135514/235868706-5323c036-28a7-47d4-96fb-6010639db250.png)
 
 
 # User Information 메뉴 에서 Edit 클릭
