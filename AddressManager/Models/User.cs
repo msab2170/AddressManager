@@ -6,10 +6,16 @@ namespace AddressManager.Models
     [PrimaryKey(nameof(Id))]
     public class User
     {
-
+        public enum GradeType
+        {
+            Admin, Basic
+        }
         public int Id { get; set; }
         [StringLength(20)]
         public string Password { get; set; }
+
+        public GradeType Grade { get; set; }
+
         [StringLength(20)]
         public string Name { get; set; }
         [StringLength(50)]

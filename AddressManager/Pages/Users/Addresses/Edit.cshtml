@@ -1,11 +1,11 @@
-﻿@page "{id:int}"
-@model AddressManager.Pages.Users.Addresses.AddAddressModel
+﻿@page "{userId:int}/{id:int}"
+@model AddressManager.Pages.Users.Addresses.EditModel
 
 @{
-    ViewData["Title"] = "AddAddress";
+    ViewData["Title"] = "Edit";
 }
 
-<h1>Add Address</h1>
+<h1>Edit</h1>
 
 <h4>Address</h4>
 <hr />
@@ -13,7 +13,8 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
+            <input type="hidden" asp-for="Address.Id" />
+            <input type="hidden" asp-for="Address.UserId" />
             <div class="form-group">
                 <label asp-for="Address.Zipcode" class="control-label"></label>
                 <input asp-for="Address.Zipcode" class="form-control" />
@@ -30,18 +31,16 @@
                 <span asp-validation-for="Address.Address2" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="/Users/Details">Back to Details</a>
+    <a asp-page="/Users/Details" asp-route-id="Address.UserId">Back to List</a>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

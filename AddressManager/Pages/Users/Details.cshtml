@@ -43,6 +43,7 @@
                     <th>Zip Code</th>
                     <th>Street Address</th>
                     <th>Detail</th>
+                    <th></th>
                 </tr>
                 @foreach (var item in Model.User.Addresses)
                 {
@@ -58,6 +59,14 @@
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Address2)
+                        </td>
+                        <td>
+                            @{
+                                String EditLink = "/Users/Addresses/Edit/" + item.UserId + "/" + item.Id;
+                                String DeleteLink = "/Users/Addresses/Edit/" + item.UserId + "/" + item.Id;
+                            }
+                            <a href="@EditLink">Edit</a>
+                            <a href="@DeleteLink">Delete</a>
                         </td>
                     </tr>
                 }

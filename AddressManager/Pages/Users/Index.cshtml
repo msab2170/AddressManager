@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.User[0].Grade)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.User[0].Name)
             </th>
             <th>
@@ -28,6 +31,9 @@
     <tbody>
 @foreach (var item in Model.User) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
