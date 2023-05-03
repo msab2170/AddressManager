@@ -10,26 +10,43 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="/Users/Index" method="get">
+    <div class="form-actions no-color" align="right">
+        <p>
+            Find by name or Email:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="/Users/Index">Back to full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].Grade)
+                @Html.DisplayNameFor(model => model.Users[0].Grade)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].Name)
+                <a asp-page="/Users/Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Users[0].Name)
+                </a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].Email)
+                @Html.DisplayNameFor(model => model.Users[0].Email)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.User[0].Phone)
+                @Html.DisplayNameFor(model => model.Users[0].Phone)
+            </th>
+            <th>
+                <a asp-page="/Users/Index" asp-route-sortOrder="@Model.DateSort">
+                     @Html.DisplayNameFor(model => model.Users[0].JoinDate)
+                </a>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.User) {
+@foreach (var item in Model.Users) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Grade)
@@ -44,6 +61,9 @@
                 @Html.DisplayFor(modelItem => item.Phone)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.JoinDate)
+            </td>
+            <td>
                 <a asp-page="/Users/Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="/Users/Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-page="/Users/Delete" asp-route-id="@item.Id">Delete</a>
@@ -52,3 +72,40 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Users.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Users.HasNextPage ? "disabled" : "";
+}
+
+<div align="center">
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.CurrentSort"
+       asp-route-pageIndex="@(Model.Users.PageIndex - 1)"
+       asp-route-currentFilter="@Model.CurrentFilter"
+       class="btn btn-primary @prevDisabled">
+        Previous
+    </a>
+    @{
+        var pages = (Model.Users.PageIndex - 1) / Model.pagePerView;
+        var StartPage = pages * Model.pagePerView + 1;
+    }
+    @for (int i = StartPage; i < StartPage + Model.pagePerView && i <= Model.Users.TotalPages; i++)
+    {
+        var currentPage = Model.Users.PageIndex == i ? "disabled" : "";
+        <a asp-page="./Index"
+           asp-route-sortOrder="@Model.CurrentSort"
+           asp-route-pageIndex="@i"
+           asp-route-currentFilter="@Model.CurrentFilter"
+           class="btn btn-primary @currentPage">
+            @i
+        </a>
+    }
+    <a asp-page="./Index"
+       asp-route-sortOrder="@Model.CurrentSort"
+       asp-route-pageIndex="@(Model.Users.PageIndex + 1)"
+       asp-route-currentFilter="@Model.CurrentFilter"
+       class="btn btn-primary @nextDisabled">
+        Next
+    </a>
+</div>

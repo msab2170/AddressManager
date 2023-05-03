@@ -35,7 +35,7 @@ namespace AddressManager.Pages.Users
             {
                 return Page();
             }
-
+            User.JoinDate = DateTime.Now; 
             _context.Users.Add(User);
             await _context.SaveChangesAsync();
 

@@ -23,6 +23,8 @@ namespace AddressManager.Models
         public string? Email { get; set; }
         [StringLength(20)]
         public string? Phone { get; set; }
+
+        public DateTime JoinDate { get; set; }
         public ICollection<Address> Addresses { get; } = new List<Address>(); // Collection navigation containing dependents
         
     }
