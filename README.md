@@ -19,14 +19,41 @@ admin계정 로그인시 로그인 구현 전처럼 회원목록 및 수정 삭�
 회원 목록 및 주소록 페이징
 
 
+# sign in 메뉴
+
+![image](https://user-images.githubusercontent.com/115135514/235618302-6ba70dd3-c245-4d45-bbcb-b02fda86ad89.png)
 
 
 
 # User Information 메뉴
+
 ![image](https://user-images.githubusercontent.com/115135514/235618249-b65c0bb1-2b7c-4158-9e1c-05afc623511a.png)
 
-# sign in 메뉴
-![image](https://user-images.githubusercontent.com/115135514/235618302-6ba70dd3-c245-4d45-bbcb-b02fda86ad89.png)
+
+# User Information 메뉴 에서 Edit 클릭
+
+![image](https://user-images.githubusercontent.com/115135514/235839987-5ac6a3d7-1583-41ef-adfe-629c8f80f005.png)
+
+
+# User Information 메뉴 에서 Delete 클릭
+
+![image](https://user-images.githubusercontent.com/115135514/235839932-cccd1cf7-1238-4b45-904c-80821700b41d.png)
+
+
 
 # User Information 메뉴에서 특정 회원의 Details 클릭
-![image](https://user-images.githubusercontent.com/115135514/235618389-f8c46b70-06bd-455b-9a97-84a2ba64be9c.png)
+
+![image](https://user-images.githubusercontent.com/115135514/235839729-dd403a29-9df8-4eb7-91dd-c5cff44aeb54.png)
+
+
+
+# Address의 Edit 클릭
+
+![image](https://user-images.githubusercontent.com/115135514/235839764-aab58955-5875-4d43-82fa-d61b158c79d8.png)
+
+
+# Address의 Delete 클릭
+![image](https://user-images.githubusercontent.com/115135514/235839813-e3ac70e9-7a0b-406f-95dc-0cfca80e8ba4.png)
+
+
+
