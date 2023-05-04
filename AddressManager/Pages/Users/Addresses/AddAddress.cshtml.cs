@@ -38,7 +38,7 @@ namespace AddressManager.Pages.Users.Addresses
                          orderby address.Id descending
                          select address.Id;
 
-            Address.Id = a.Count() + 1;
+            Address.Id = a.Max() + 1;
             Address.UserId = id;
 
             _context.Addresses.Add(Address);
