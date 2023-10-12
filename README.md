@@ -1,7 +1,7 @@
 # AddressManager
 간단한 주소록 만들기
 
-(사용언어 및 프로그램, 서버)
+    (사용언어 및 프로그램, 서버)
     - C# 
     - .net 7.0
     - ASP.NET Core Razor Page  
