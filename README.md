@@ -2,7 +2,11 @@
 간단한 주소록 만들기
 
 (사용언어 및 프로그램, 서버)
-C#, dotnet 7.0, ASP.NET Core Razor Page , Entity Framework Core, MSSQL(SQL Server) 사용
+    - C# 
+    - .net 7.0
+    - ASP.NET Core Razor Page  
+    - Entity Framework Core 
+    - MSSQL(SQL Server) 
 
 연습용 자체 과제로
 Microsoft사에서 제공하는 기본 프로젝트 기반위에 프론트단은 최소화 하고 기능위주로 구현
